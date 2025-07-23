@@ -23,7 +23,7 @@ Each project is designed to sharpen your front-end development skills through ha
 1. Clone this repository:
    ```bash
    git clone https://github.com/YOUR-USERNAME/30-days-js.git
-   cd 30-days-js
+   cd 30-js-projects
 2. Open any index.html file inside a dayXX-project-name/ folder to view the project in your browser.
 
 3. Or use Live Server in VS Code for live preview.
