@@ -43,5 +43,5 @@ This project is open-source and available under the [MIT License](LICENSE).
 Made with 💙 by Zia UL Mustafa  
 
 ## 🙏 Credits
-This project was inspired by [Wesobos](hhttps://javascript30.com/).
+This project was inspired by [Wesobos](https://javascript30.com/).
 Big thanks for the helpful guide!
