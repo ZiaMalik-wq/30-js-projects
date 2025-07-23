@@ -10,9 +10,9 @@ Each project is designed to sharpen your front-end development skills through ha
 
 | Day  | Project Name      | Live Demo                                             | Source Code                   |
 |------|-------------------|-------------------------------------------------------|-------------------------------|
-| 01   | Drum Kit          | [Live](https://drumkit-psi-ochre.vercel.app/)         | [Code](./day01-drum-kit)     |
-| 02   | Project Name      | Coming Soon                                           | [Code](./day02-project-name) |
-| 03   | Project Name      | Coming Soon                                           | [Code](./day03-project-name) |
+| 01   | Drum Kit          | [Live](https://drumkit-psi-ochre.vercel.app/)         | [Code](./day01-drum-kit)      |
+| 02   | Project Name      | Coming Soon                                           | [Code](./day02-project-name)  |
+| 03   | Project Name      | Coming Soon                                           | [Code](./day03-project-name)  |
 | ...  | ...               | ...                                                   | ...                           |
 | 30   | Final Project     | Coming Soon                                           | [Code](./day30-final-project) |
 
@@ -43,5 +43,5 @@ This project is open-source and available under the [MIT License](LICENSE).
 Made with 💙 by Zia UL Mustafa  
 
 ## 🙏 Credits
-This project was inspired by[Wesobos](hhttps://javascript30.com/).
+This project was inspired by [Wesobos](hhttps://javascript30.com/).
 Big thanks for the helpful guide!
