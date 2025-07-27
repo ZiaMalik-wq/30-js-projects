@@ -40,6 +40,11 @@ You can modify the clock's appearance or behavior by editing:
 - A live digital time (`aria-live="polite"`) is updated every minute to help screen reader users.
 - Keyboard support: Press **`R`** to refresh the time manually.
 
+## 🚀 Live Demo
+
+Check out the live version here:  
+🔗 [https://analog-clock-eight-vert.vercel.app/](https://analog-clock-eight-vert.vercel.app/)
+
 ## 🧪 Compatibility
 
 Tested and works on:
