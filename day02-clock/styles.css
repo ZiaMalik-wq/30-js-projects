@@ -12,7 +12,7 @@
 }
 
 html {
-    background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+    background: #018DED;
     background-size: cover;
     font-family: 'helvetica neue', sans-serif;
     text-align: center;
@@ -207,6 +207,6 @@ body {
     }
 
     html {
-        background: #2c3e50 url(https://unsplash.it/1500/1000?image=881&blur=5);
+        background: #2c3e50
     }
 }
