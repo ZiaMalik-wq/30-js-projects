@@ -1,0 +1,212 @@
+:root {
+    --clock-size: 30rem;
+    --border-width: 20px;
+    --hand-color: #333;
+    --hour-hand-height: 8px;
+    --min-hand-height: 6px;
+    --second-hand-height: 2px;
+    --face-color: white;
+    --face-inset-color: #EFEFEF;
+    --second-hand-color: #ff4757;
+    --marker-color: #333;
+}
+
+html {
+    background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+    background-size: cover;
+    font-family: 'helvetica neue', sans-serif;
+    text-align: center;
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock {
+    width: var(--clock-size);
+    height: var(--clock-size);
+    border: var(--border-width) solid var(--face-color);
+    border-radius: 50%;
+    position: relative;
+    padding: 2rem;
+    box-shadow:
+        0 0 0 4px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 3px var(--face-inset-color),
+        inset 0 0 10px black,
+        0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Center dot */
+.clock::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--hand-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Hour markers */
+.hour-marker {
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    background: var(--marker-color);
+    top: 0;
+    left: 50%;
+    transform-origin: 50% calc(var(--clock-size) / 2);
+    border-radius: 2px;
+}
+
+.hour-marker.quarter {
+    width: 6px;
+    height: 60px;
+    background: var(--marker-color);
+}
+
+/* Base hand styles */
+.hand {
+    position: absolute;
+    top: 50%;
+    background: var(--hand-color);
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: transform 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hour-hand {
+    width: 30%;
+    height: var(--hour-hand-height);
+    background: var(--hand-color);
+    z-index: 3;
+    left: 20%;
+}
+
+.min-hand {
+    width: 45%;
+    height: var(--min-hand-height);
+    background: var(--hand-color);
+    z-index: 2;
+    left: 5%;
+}
+
+.second-hand {
+    width: 48%;
+    height: var(--second-hand-height);
+    background: var(--second-hand-color);
+    z-index: 1;
+    left: 2%;
+}
+
+.no-transition {
+    transition: none !important;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.digital-time {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    :root {
+        --clock-size: 25rem;
+        --border-width: 15px;
+    }
+
+    .digital-time {
+        font-size: 1.2rem;
+        bottom: -50px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --clock-size: 20rem;
+        --border-width: 12px;
+    }
+
+    .clock::before {
+        width: 12px;
+        height: 12px;
+    }
+
+    .hour-marker {
+        width: 3px;
+        height: 30px;
+    }
+
+    .hour-marker.quarter {
+        width: 4px;
+        height: 45px;
+    }
+
+    .digital-time {
+        font-size: 1rem;
+        bottom: -40px;
+    }
+}
+
+/* Smooth animation improvements */
+@media (prefers-reduced-motion: reduce) {
+    .hand {
+        transition: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --face-color: #2c3e50;
+        --face-inset-color: #34495e;
+        --hand-color: #ecf0f1;
+        --marker-color: #ecf0f1;
+    }
+
+    html {
+        background: #2c3e50 url(https://unsplash.it/1500/1000?image=881&blur=5);
+    }
+}

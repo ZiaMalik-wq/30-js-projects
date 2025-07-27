@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS + CSS Clock</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="clock" role="img" aria-label="Analog clock showing current time">
+        <div class="clock-face">
+            <!-- Hour markers -->
+            <div class="hour-marker quarter" style="transform: translateX(-50%) rotate(0deg);"></div>
+            <div class="hour-marker" style="transform: translateX(-50%) rotate(30deg);"></div>
+            <div class="hour-marker" style="transform: translateX(-50%) rotate(60deg);"></div>
+            <div class="hour-marker quarter" style="transform: translateX(-50%) rotate(90deg);"></div>
+            <div class="hour-marker" style="transform: translateX(-50%) rotate(120deg);"></div>
+            <div class="hour-marker" style="transform: translateX(-50%) rotate(150deg);"></div>
+            <div class="hour-marker quarter" style="transform: translateX(-50%) rotate(180deg);"></div>
+            <div class="hour-marker" style="transform: translateX(-50%) rotate(210deg);"></div>
+            <div class="hour-marker" style="transform: translateX(-50%) rotate(240deg);"></div>
+            <div class="hour-marker quarter" style="transform: translateX(-50%) rotate(270deg);"></div>
+            <div class="hour-marker" style="transform: translateX(-50%) rotate(300deg);"></div>
+            <div class="hour-marker" style="transform: translateX(-50%) rotate(330deg);"></div>
+
+            <!-- Clock hands -->
+            <div class="hand hour-hand" aria-label="Hour hand"></div>
+            <div class="hand min-hand" aria-label="Minute hand"></div>
+            <div class="hand second-hand" aria-label="Second hand"></div>
+        </div>
+
+        <div class="digital-time" id="digital-time"></div>
+    </div>
+
+    <div class="sr-only" aria-live="polite" id="time-announce"></div>
+
+    <script>
+
+        const hands = {
+            second: document.querySelector('.second-hand'),
+            minute: document.querySelector('.min-hand'),
+            hour: document.querySelector('.hour-hand')
+        };
+
+        const digitalTimeDisplay = document.getElementById('digital-time');
+        const timeAnnounce = document.getElementById('time-announce');
+
+        const DEGREE_OFFSET = 90;
+        let clockInterval;
+        let lastMinute = -1; // Track minute changes for accessibility announcements
+
+        function setDate() {
+            const now = new Date();
+            const time = {
+                seconds: now.getSeconds(),
+                minutes: now.getMinutes(),
+                hours: now.getHours()
+            };
+
+            const shouldRemoveSecondTransition = time.seconds === 0;
+            const shouldRemoveMinuteTransition = time.minutes === 0 && time.seconds === 0;
+            const shouldRemoveHourTransition = time.hours % 12 === 0 && time.minutes === 0 && time.seconds === 0;
+
+            // Remove transitions before potential jumps
+            if (shouldRemoveSecondTransition) {
+                hands.second.classList.add('no-transition');
+            }
+            if (shouldRemoveMinuteTransition) {
+                hands.minute.classList.add('no-transition');
+            }
+            if (shouldRemoveHourTransition) {
+                hands.hour.classList.add('no-transition');
+            }
+
+            // Calculate degrees for each hand
+            const secondDegrees = ((time.seconds / 60) * 360) + DEGREE_OFFSET;
+            const minuteDegrees = ((time.minutes / 60) * 360) + ((time.seconds / 60) * 6) + DEGREE_OFFSET;
+            const hourDegrees = ((time.hours % 12 / 12) * 360) + ((time.minutes / 60) * 30) + DEGREE_OFFSET;
+
+            // Apply rotations
+            hands.second.style.transform = `rotate(${secondDegrees}deg)`;
+            hands.minute.style.transform = `rotate(${minuteDegrees}deg)`;
+            hands.hour.style.transform = `rotate(${hourDegrees}deg)`;
+
+            // Update digital time display
+            if (digitalTimeDisplay) {
+                digitalTimeDisplay.textContent = now.toLocaleTimeString();
+            }
+
+            // Update accessibility announcement every minute
+            if (timeAnnounce && time.minutes !== lastMinute) {
+                const timeString = now.toLocaleTimeString([], {
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                });
+                timeAnnounce.textContent = `Current time: ${timeString}`;
+                lastMinute = time.minutes;
+            }
+
+            // Re-enable transitions after a frame to ensure smooth animation
+            if (shouldRemoveSecondTransition || shouldRemoveMinuteTransition || shouldRemoveHourTransition) {
+                requestAnimationFrame(() => {
+                    hands.second.classList.remove('no-transition');
+                    hands.minute.classList.remove('no-transition');
+                    hands.hour.classList.remove('no-transition');
+                });
+            }
+        }
+
+        function startClock() {
+            setDate(); // Initial call to set time immediately
+            clockInterval = setInterval(setDate, 1000);
+        }
+
+        function stopClock() {
+            if (clockInterval) {
+                clearInterval(clockInterval);
+                clockInterval = null;
+            }
+        }
+
+        // Handle page visibility changes to optimize performance
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopClock();
+                console.log('Clock stopped - page hidden');
+            } else {
+                startClock();
+                console.log('Clock started - page visible');
+            }
+        });
+
+        // Handle page unload cleanup
+        window.addEventListener('beforeunload', () => {
+            stopClock();
+        });
+
+        // Error handling wrapper
+        function safeSetDate() {
+            try {
+                setDate();
+            } catch (error) {
+                console.error('Error updating clock:', error);
+                stopClock();
+                setTimeout(startClock, 1000);
+            }
+        }
+
+        // Initialize the clock
+        try {
+            startClock();
+            console.log('Analog clock initialized successfully');
+        } catch (error) {
+            console.error('Failed to initialize clock:', error);
+        }
+
+        // Add keyboard interaction for accessibility
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'r' || event.key === 'R') {
+                // Refresh time when 'R' is pressed
+                setDate();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
