@@ -301,5 +301,8 @@ body {
     .todo-container { padding: 20px; margin: 10px; }
     .header h1 { font-size: 1.8em; }
     .stats { flex-direction: column; gap: 5px; text-align: center; }
+    #addBtn { 
+        margin-left: 2px;
+    }
     .filter-buttons { flex-wrap: wrap; }
 }
