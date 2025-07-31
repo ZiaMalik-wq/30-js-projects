@@ -31,7 +31,7 @@ This is a simple front-end project with no build steps required.
 
 1. **Clone the repository**
    ```bash
-   git clone 
+   git clone https://github.com/ZiaMalik-wq/30-js-projects.git
    ```
 
 2. **Navigate to the project directory**
@@ -51,7 +51,7 @@ And that's it! The application is now running locally.
 ## 🚀 Live Demo
 
 Check out the live version here:  
-🔗 [https://analog-clock-eight-vert.vercel.app/](https://analog-clock-eight-vert.vercel.app/)
+🔗 [https://to-do-list-kbwy5h41f-zia-ul-mustafas-projects.vercel.app/](https://to-do-list-kbwy5h41f-zia-ul-mustafas-projects.vercel.app/)
 
 ## 🌱 Potential Improvements
 
