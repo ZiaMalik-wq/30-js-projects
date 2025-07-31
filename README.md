@@ -8,13 +8,13 @@ Each project is designed to sharpen your front-end development skills through ha
 
 ## 📅 Project List
 
-| Day  | Project Name      | Live Demo                                             | Source Code                   |
-|------|-------------------|-------------------------------------------------------|-------------------------------|
-| 01   | Drum Kit          | [Live](https://drumkit-psi-ochre.vercel.app/)         | [Code](./day01-drum-kit)      |
-| 02   | Project Name      | Coming Soon                                           | [Code](./day02-project-name)  |
-| 03   | Project Name      | Coming Soon                                           | [Code](./day03-project-name)  |
-| ...  | ...               | ...                                                   | ...                           |
-| 30   | Final Project     | Coming Soon                                           | [Code](./day30-final-project) |
+| Day  | Project Name      | Live Demo                                                 | Source Code                   |
+|------|-------------------|-----------------------------------------------------------|-------------------------------|
+| 01   | Drum Kit          |[Live](https://drumkit-psi-ochre.vercel.app/)              | [Code](./day01-drum-kit)      |
+| 02   | Project Name      |[Live](https://analog-clock-eight-vert.vercel.app)         | [Code](./day02-clock/)        |
+| 03   | ToDoLIst          |[Live](https://to-do-list-six-blond-3bwmwl4wqy.vercel.app/) | [Code](./day03-To-Do-Lis)    |
+| ...  | ...               | ...                                                   | ...                               |
+| 30   | Final Project     | Coming Soon                                           | [Code](./day30-final-project)     |
 
 ---
 
