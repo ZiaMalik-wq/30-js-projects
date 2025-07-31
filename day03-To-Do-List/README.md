@@ -36,7 +36,7 @@ This is a simple front-end project with no build steps required.
 
 2. **Navigate to the project directory**
    ```bash
-   cd to-do-list-enhanced
+   cd day03-To-Do-List
    ```
 
 3. **Open the project**
