@@ -51,7 +51,7 @@ And that's it! The application is now running locally.
 ## 🚀 Live Demo
 
 Check out the live version here:  
-🔗 [https://to-do-list-kbwy5h41f-zia-ul-mustafas-projects.vercel.app/](https://to-do-list-kbwy5h41f-zia-ul-mustafas-projects.vercel.app/)
+🔗 [https://to-do-list-six-blond-3bwmwl4wqy.vercel.app/](https://to-do-list-six-blond-3bwmwl4wqy.vercel.app/)
 
 ## 🌱 Potential Improvements
 
