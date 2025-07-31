@@ -1,5 +1,5 @@
 
-# ✨ Enhanced To-Do List
+# ✨To-Do List
 
 A modern, responsive, and feature-rich to-do list application built with vanilla HTML, CSS, and JavaScript. It provides a clean interface for managing daily tasks and persists all data to the browser's localStorage.
 
