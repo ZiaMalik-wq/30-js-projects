@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO and Tab Title -->
     <title>Sidcup Family Golf - Clone</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +13,10 @@
 </head>
 
 <body>
-    <!-- Custom Cursor Elements -->
     <div id="cursor"></div>
     <div id="cursor-blur"></div>
-
-    <!-- Semantic Navigation -->
+    <div id="card-cursor"></div>
+    
     <nav id="nav">
         <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg"
             alt="Sidcup Family Golf Logo" />
@@ -31,7 +29,6 @@
         </ul>
     </nav>
 
-    <!-- Video Background -->
     <main id="main">
         <div id="page1">
             <video autoplay loop muted playsinline
@@ -46,19 +43,95 @@
         </div>
         <div id="page2">
             <div id="scroller">
-                <div id="scroller-in">
-                    <h4>Toptracer Range</h4>
-                    <h4>Golf Lessons</h4>
-                    <h4>Crazy Golf</h4>
-                    <h4>Coffee Shop</h4>
-                </div>
-                <div id="scroller-in">
-                    <h4>Toptracer Range</h4>
-                    <h4>Golf Lessons</h4>
-                    <h4>Crazy Golf</h4>
-                    <h4>Coffee Shop</h4>
+                <div id="scroller-content">
+                    <div class="scroller-in">
+                        <span>Toptracer Range</span>
+                        <span>Golf Lessons</span>
+                        <span>Crazy Golf</span>
+                        <span>Coffee Shop</span>
+                    </div>
+                    <div class="scroller-in">
+                        <span>Toptracer Range</span>
+                        <span>Golf Lessons</span>
+                        <span>Crazy Golf</span>
+                        <span>Coffee Shop</span>
+                    </div>
                 </div>
             </div>
+            <section id="about-us">
+                <div class="about-image">
+                    <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-1-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+                        alt="" />
+                </div>
+
+                <div id="about-us-in">
+                    <h3>ABOUT US</h3>
+                    <p>
+                        Home to a 46-bay, multi-tier, floodlit driving range, powered by
+                        Toptracer Range technology. Complimented by a practice green and
+                        bunker, coffee shop and American Golf Store. There truly is
+                        something for everyone as we also boast two outdoor 18-hole
+                        dinosaur themed crazy golf courses.
+                    </p>
+                    <p id="note">
+                        Please note: we are a cashless venue. The range closes at 10pm with last balls at 9pm.
+                    </p>
+                </div>
+
+                <div class="about-image">
+                    <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-2-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+                        alt="" />
+                </div>
+            </section>
+            <section id="cards-container">
+                <div class="card" style="background-image: url('Assets/card1.avif')">
+                    <h3>TopRacer Range</h3>
+                    <div class="overlay">
+                        <div class="arrow-container">
+                            <span class="arrow">&#8594;</span>
+                        </div>
+                        <p>
+                            Our range delivers the same ball-tracking technology that traces the shots of
+                            the game’s best players on TV.
+                        </p>
+                        <p>
+                            Toptracer Range technology offers a fun, engaging, tech-driven experience
+                            that appeals to seasoned players, range rivals, friends, family members, and
+                            even first-time golfers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card" style="background-image: url('Assets/card2.webp')">
+                    <h3>Adventure Golf</h3>
+                    <div class="overlay">
+                        <div class="arrow-container">
+                            <span class="arrow">&#8594;</span>
+                        </div>
+                        <p>Adventure awaits you!</p>
+                        <p>
+                            Become a Jurassic explorer as you delve into the land of the dinosaurs! Putt
+                            your way through prehistoric landscapes, cascading waterfalls, and meet some
+                            dinosaur friends along the way.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card" style="background-image: url('Assets/card3.avif')">
+                     <h3>Golf Lessons</h3>
+                    <div class="overlay">
+                        <div class="arrow-container">
+                            <span class="arrow">&#8594;</span>
+                        </div>
+                        <p>
+                            Passionate about player development, whether you are new to the game or an
+                            aspiring pro, we offer both group and individual lessons tailored to you
+                            with the sole focus of helping you reach your goals.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </main>
 
